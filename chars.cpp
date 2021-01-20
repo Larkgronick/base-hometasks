@@ -9,7 +9,6 @@ bool isWord(char str[]);
 
 int strtoint(char str[]);
 
-
 int main()
 {
     int checkPosition = 0;
@@ -17,7 +16,6 @@ int main()
 
     cout << endl;
 
-    
     if (isDigit(str[checkPosition])) {
         cout << str[checkPosition] << " is a digit" << endl;
     } else {
@@ -47,15 +45,13 @@ int main()
 
 }
 
- 
-
 bool isNumber(char str[])
 {
     for (int i = 0; i < strlen(str); i++)
     {
-         if(isDigit(str[i]) == false)
+         if(!isDigit(str[i]))
         {
-          return false;
+            return false;
         } 
     
     }
@@ -66,25 +62,18 @@ bool isNumber(char str[])
 bool isDigit (char symbol)
 {
     if(symbol >= '0' and symbol <= '9') {
-     return true;
+        return true;
     } else {
-     return false;
+        return false;
     }
   
 }
 
-
 bool isAlpha(char symbol)
 {
-    char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                      "abcdefghijklmnopqrstuvwxyz";
-
-    for (int i = 0; i < strlen(alphabet); i++) {
-        if(alphabet[i] == symbol)
-        {
-          return true;   
-        }
-    }
+   if((symbol >= 'A' && symbol <= 'Z') || (symbol >= 'a' && symbol <= 'z')) {
+       return true;
+   }
     return false;
 
 }
@@ -112,8 +101,6 @@ int strtoint(char str[])
         num =  (str[i] - '0')  + (num * 10);
         i++;
     }
-    return num;;
+    return num;
   
 }
-
-
