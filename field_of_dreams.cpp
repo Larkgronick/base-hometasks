@@ -8,6 +8,9 @@ void showField(char hiddenWord[], int wordLength)
     system("cls");
 
     cout << "Field of Dream Game with Leonid Jacubovich" << endl;
+    cout << "----------" << endl;
+    cout << "Question: What do the chicken and us have in common?" << endl; 
+    cout << "----------" << endl;
     cout << "Choose a letter until you guess a word:" << endl;
 
     for (int i = 0; i < wordLength; i++)
@@ -43,8 +46,6 @@ void runJakubovichJoke()
 
     std::cout << phrases[rand() % 4] << endl;
 
-    system("cls");
-
 }
 
 char* hideWord(char wordToHide[])
@@ -78,7 +79,6 @@ bool checkAnswer(char symbol, char wordToHide[], char* hiddenWord)
 
     if(match == 1)
     {
-        cout << "It's a match!" << endl;
         return strcmp(hiddenWord, wordToHide) == 1;
     } 
 
@@ -105,6 +105,7 @@ int main()
  int wordLength = strlen(wordToHide);
 
  char* hiddenWord = hideWord(wordToHide);
+
  showField(hiddenWord, wordLength);
  makeGuess(wordToHide, hiddenWord);
 

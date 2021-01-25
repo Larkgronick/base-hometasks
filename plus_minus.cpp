@@ -45,6 +45,7 @@ int main()
 {
     int checkPosition = 0;
     char str[]= "AB3 2K 0"; 
+    
     getPlusMinusView(str);
 
 }
